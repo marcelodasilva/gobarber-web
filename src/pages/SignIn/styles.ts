@@ -16,12 +16,12 @@ export const Content = styled.div`
   place-content: center;
   align-items: center;
   width: 100%;
-  max-width: 600px;
+  max-width: 700px;
 
   img {
   }
   form {
-    margin: 80px 0;
+    margin: 50px 0;
     width: 340px;
     text-align: center;
     h1 {
