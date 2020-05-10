@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { shade } from 'polished';
 import SignUpBG from '../../assets/sign-up-background.png';
 
@@ -7,7 +7,19 @@ export const Container = styled.div`
   display: flex;
   align-items: stretch;
 `;
-export const Content = styled.div`
+
+const appearFromRight = keyframes`
+  from {
+    opacity:0;
+    transform:translateX(50px)
+  }
+
+  to {
+    opacity:1,
+    transform: translateX(0)
+  }`;
+
+export const AnimatedContainer = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -15,11 +27,8 @@ export const Content = styled.div`
   both the align-content and justify-content properties */
   place-content: center;
   align-items: center;
-  width: 100%;
-  max-width: 700px;
 
-  img {
-  }
+  animation: ${appearFromRight} 1s;
   form {
     margin: 50px 0;
     width: 340px;
@@ -54,6 +63,21 @@ export const Content = styled.div`
     svg {
       margin-right: 16px;
     }
+  }
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+
+  /** The place-content CSS shorthand property sets
+  both the align-content and justify-content properties */
+  place-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+
+  img {
   }
 `;
 export const Background = styled.div`
